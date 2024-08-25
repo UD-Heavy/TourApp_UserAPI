@@ -15,7 +15,7 @@ import ru.spring.API.UserAPITourAPP.DTO.UserLogInDTO;
 import ru.spring.API.UserAPITourAPP.excexptions.IncorrectUserPasswordException;
 import ru.spring.API.UserAPITourAPP.excexptions.UserNotFoundException;
 import ru.spring.API.UserAPITourAPP.models.User;
-import ru.spring.API.UserAPITourAPP.services.UserService;
+import ru.spring.API.UserAPITourAPP.services.UserServiceImpl;
 import ru.spring.API.UserAPITourAPP.utils.RegisterPesponse;
 import ru.spring.API.UserAPITourAPP.validators.UserLogInValidator;
 import ru.spring.API.UserAPITourAPP.validators.UserValidator;
@@ -28,11 +28,11 @@ public class UserController {
 
     private final UserValidator userValidator;
     private final UserLogInValidator userLogInValidator;
-    private final UserService userService;
+    private final UserServiceImpl userService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public UserController(UserValidator userValidator, UserLogInValidator userLogInValidator, UserService userService, ModelMapper modelMapper) {
+    public UserController(UserValidator userValidator, UserLogInValidator userLogInValidator, UserServiceImpl userService, ModelMapper modelMapper) {
         this.userValidator = userValidator;
         this.userLogInValidator = userLogInValidator;
         this.userService = userService;
