@@ -6,15 +6,13 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 public class UserLogInDTO {
-    @Column(name = "email")
     @NotEmpty(message = "Email should be not empty")
     @Size(max = 100, message = "Email should be shorter than 100 characters")
     @Email
     private String email;
 
-    @Column(name = "password")
-    @NotEmpty(message = "Email should be not empty")
-    @Size(max = 100, message = "Email should be shorter than 100 characters")
+    @NotEmpty(message = "Password should be not empty")
+    @Size(max = 100, message = "Password should be shorter than 100 characters")
     private String password;
 
     public UserLogInDTO() {
